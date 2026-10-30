@@ -1,0 +1,26 @@
+services:
+  container_1:
+    image: alpine/curl
+    container_name: container_1
+    command: ["sleep", "infinity"]
+    networks:
+      - shared_network
+
+  container_2:
+    image: alpine/curl
+    container_name: container_2
+    command: ["sleep", "infinity"]
+    networks:
+      - shared_network
+
+  container_3:
+    image: alpine/curl
+    container_name: container_3
+    command: ["sleep", "infinity"]
+    networks:
+      - shared_network
+
+      
+networks:
+  shared_network:
+    driver: bridge
